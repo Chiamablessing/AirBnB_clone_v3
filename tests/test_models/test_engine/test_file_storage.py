@@ -140,5 +140,8 @@ class TestFileStorage(unittest.TestCase):
             new_dict[instance_key] = instance
         save = FileStorage._FileStorage__objects
         FileStorage._FileStorage__objects = new_dict
-        self.assertEqual(len(new_dict), storage.count())
+        self.assertEqual(self.storage.count(), len(new_dict))
         FileStorage._FileStorage__objects = save
+
+    if __name__ == "__main__":
+        unittest.main()
